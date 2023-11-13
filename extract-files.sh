@@ -6,8 +6,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-function blob_fixup() {
+function blob_fixup() {  
     case "${1}" in
+        vendor/etc/init/init.mi_thermald.rc|vendor/etc/init/init.batterysecret.rc)
+            sed -i 's/on charger/on property:init.svc.vendor.charger=running/g' "${2}"
+            ;;
     esac
 }
 
