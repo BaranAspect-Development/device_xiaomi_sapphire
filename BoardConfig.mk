@@ -21,6 +21,9 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_sapphire
 TARGET_RECOVERY_DEVICE_MODULES := init_sapphire
 
+# Inherit from proprietary files for miuicamera
+-include device/xiaomi/miuicamera-sapphire/BoardConfig.mk
+
 # Kernel prebuilt
 BOARD_USES_DT := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
